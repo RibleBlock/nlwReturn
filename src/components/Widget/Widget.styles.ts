@@ -20,8 +20,8 @@ export const Container = styled(Popover)`
 `;
 
 export const Icon = styled(ChatTeardropDots)`
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
 `;
 
 export const Button = styled(Popover.Button)`

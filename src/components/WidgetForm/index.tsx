@@ -1,6 +1,6 @@
 import { CloseButton } from '../CloseButton';
 import {
-  Form, HeaderForm, FeedbackButton, MainForm, FooterForm,
+  FormBox, HeaderForm, FeedbackButton, MainForm, FooterForm,
 } from './WidgetForm.styles';
 
 import bugImageUrl from '../../assets/images/bug.svg';
@@ -39,7 +39,7 @@ const feedbackTypes = {
 
 export function WidgetForm() {
   return (
-    <Form>
+    <FormBox>
       <HeaderForm>
         <span>Deixe seu feedback</span>
         <CloseButton />
@@ -63,6 +63,6 @@ export function WidgetForm() {
         {' '}
         <a href="http://github.com/ribleblock" target="_blank" rel="noopener noreferrer">Riquelme</a>
       </FooterForm>
-    </Form>
+    </FormBox>
   );
 }

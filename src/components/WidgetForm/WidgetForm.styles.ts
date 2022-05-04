@@ -9,7 +9,7 @@ export const MainForm = styled.div`
   display: flex;
   gap: 0.8rem;
   width: 100%;
-  padding: 3rem 0;
+  padding: 2rem 0;
 `;
 
 export const FeedbackButton = styled.button`
@@ -43,7 +43,7 @@ export const FooterForm = styled.footer`
   }
 `;
 
-export const Form = styled.div`
+export const FormBox = styled.div`
   background-color: #2b2b6b;
   padding: 1.6rem;
   border-radius: 1.6rem;
