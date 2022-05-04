@@ -6,7 +6,17 @@ export const Container = styled(Popover)`
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
-  font-size: 1.6rem;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @media (min-width: 870px) {
+    & {
+      right: 2rem;
+      bottom: 2rem;
+    }
+  }
 `;
 
 export const Icon = styled(ChatTeardropDots)`
@@ -19,11 +29,9 @@ export const Button = styled(Popover.Button)`
   color: #fff;
   border-radius: 10rem;
   padding: 1rem;
-  text-align: right;
 
   display: flex;
   align-items: center;
-  gap: .2rem;
 
   > span {
     max-width: 0;
@@ -32,7 +40,8 @@ export const Button = styled(Popover.Button)`
     transition-timing-function: ease;
 
     span {
-      padding-left: 2;
+      /* pra dar um espaco */
+      padding-left: 2px;
     }
   }
 

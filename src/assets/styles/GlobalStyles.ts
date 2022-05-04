@@ -8,8 +8,13 @@ export default createGlobalStyle`
     border: none;
   }
 
-  body, input, button {
+  body, input, button, :root {
     font-size: 62.5%;
+    background-color: transparent;
+  }
 
+  body {
+    background-color: #09090a;
+    color: #f0f0f0;
   }
 `;

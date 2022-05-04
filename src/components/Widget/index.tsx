@@ -1,21 +1,19 @@
-// import { useState } from 'react';
 import { Popover } from '@headlessui/react';
 import { Container, Button, Icon } from './Widget.styles';
 
+import { WidgetForm } from '../WidgetForm';
+
 export function Widget() {
-  // const [isWidgetOpen, setIsWidgetOpen] = useState(false);
-
-  // function toggleWidgerVisibility() {
-  //   setIsWidgetOpen(!isWidgetOpen);
-  // }
-
   return (
     <Container>
-      <Popover.Panel>OLA MUNDAO</Popover.Panel>
+      <Popover.Panel>
+        <WidgetForm />
+      </Popover.Panel>
 
       <Button>
         <Icon weight="regular" />
         <span>
+          <span></span>
           Feedback
         </span>
       </Button>
