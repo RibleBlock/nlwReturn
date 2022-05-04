@@ -15,7 +15,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: #09090a;
-    color: #f0f0f0;
+    background-color: ${({ theme }) => theme.COLORS.surface_primary};
+    color: ${({ theme }) => theme.COLORS.text_primary};
   }
 `;

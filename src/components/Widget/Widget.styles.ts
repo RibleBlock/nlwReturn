@@ -25,8 +25,8 @@ export const Icon = styled(ChatTeardropDots)`
 `;
 
 export const Button = styled(Popover.Button)`
-  background-color: #8257E6;
-  color: #fff;
+  background-color: ${({ theme }) => theme.COLORS.brand};
+  color: ${({ theme }) => theme.COLORS.text_on_brand_color};
   border-radius: 10rem;
   padding: 1rem;
 

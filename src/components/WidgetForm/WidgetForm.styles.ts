@@ -14,7 +14,7 @@ export const MainForm = styled.div`
 
 export const FeedbackButton = styled.button`
   background-color: #030303;
-  color: #c3c3c3;
+  color: ${({ theme }) => theme.COLORS.text_primary};
   border-radius: 2rem;
   width: 9.6rem;
   padding: 2rem 0;
@@ -28,14 +28,14 @@ export const FeedbackButton = styled.button`
   border: .2rem solid transparent;
   &:focus, &:hover {
     outline: none;
-    border-color: #8257E6;
+    border-color: ${({ theme }) => theme.COLORS.brand_hover};
   }
 `;
 
 export const FooterForm = styled.footer`
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: #c3c3c3;
+  color: ${({ theme }) => theme.COLORS.text_secundary};
 
   & > a {
     color: inherit;
@@ -44,7 +44,7 @@ export const FooterForm = styled.footer`
 `;
 
 export const FormBox = styled.div`
-  background-color: #2b2b6b;
+  background-color: ${({ theme }) => theme.COLORS.surface_secondary};
   padding: 1.6rem;
   border-radius: 1.6rem;
   margin-bottom: 1.6rem;

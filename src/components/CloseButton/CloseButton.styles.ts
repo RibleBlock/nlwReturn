@@ -12,9 +12,9 @@ export const PopButton = styled(Popover.Button)`
   top: 2rem;
   right: 2rem;
 
-  color: #c1c1c1;
+  color: ${({ theme }) => theme.COLORS.text_secundary};
   background-color: transparent;
   &:hover {
-    color: #f9f9f9;
+    color: ${({ theme }) => theme.COLORS.text_primary};
   }
 `;
