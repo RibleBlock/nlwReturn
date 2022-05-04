@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { CloseButton } from '../CloseButton';
 import {
   FormBox, HeaderForm, FeedbackButton, MainForm, FooterForm,
@@ -37,7 +38,17 @@ const feedbackTypes = {
 };
 /* Object.entries(feedbackTypes) => [ ['BUG', {...}], ['IDEA', {...}], ['OTHER', {...}] ] */
 
+/*
+  A melhor forma de salvar informacoes a partir da
+  interacao do usuario com a nossa interface é utilizando estado
+ */
+
+// Keyof - Retorna a tipagem do objeto feedbackTypes
+type FeedbackType = keyof typeof feedbackTypes;
+
 export function WidgetForm() {
+  const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null);
+
   return (
     <FormBox>
       <HeaderForm>
@@ -45,18 +56,22 @@ export function WidgetForm() {
         <CloseButton />
       </HeaderForm>
 
-      {/* REVIZAR DE NOVO!! */}
-      <MainForm>
-        { Object.entries(feedbackTypes).map(([key, value]) => (
-          <FeedbackButton
-            type="button"
-            key={key}
-          >
-            <img src={value.image.source} alt={value.image.alt} />
-            <span>{value.title}</span>
-          </FeedbackButton>
-        )) }
-      </MainForm>
+      { !feedbackType ? (
+        <MainForm>
+          { Object.entries(feedbackTypes).map(([key, value]) => (
+            <FeedbackButton
+              type="button"
+              key={key}
+              onClick={() => setFeedbackType(key as FeedbackType)}
+            >
+              <img src={value.image.source} alt={value.image.alt} />
+              <span>{value.title}</span>
+            </FeedbackButton>
+          )) }
+        </MainForm>
+      ) : (
+        <p>Selecionado.</p>
+      ) }
 
       <FooterForm>
         Feito com ❤ pelo
