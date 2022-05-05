@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { CloseButton } from '../CloseButton';
 import {
-  FormBox, HeaderForm, FooterForm,
+  FormBox, FooterForm,
 } from './WidgetForm.styles';
 
 import { FeedbackTypeStep } from './Steps/FeedbackTypeStep';

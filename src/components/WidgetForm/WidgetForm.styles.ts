@@ -10,10 +10,6 @@ export const HeaderForm = styled.header`
     position: absolute;
     top: 2rem;
     left: 2rem;
-
-    > ArrowLeft {
-
-    }
   }
 
   > span {
@@ -34,13 +30,51 @@ export const ArrowBack = styled(ArrowLeft)`
   &:hover {
     color: ${({ theme }) => theme.COLORS.text_primary};
   }
-`;
+  `;
 
-export const MainForm = styled.div`
+export const MainForm = styled.form`
   display: flex;
   gap: 0.8rem;
   width: 100%;
-  padding: 2rem 0;
+  padding: .8rem 0;
+
+  > textarea {
+    resize: none;
+    min-width: 30.4rem;
+    min-height: 11.2rem;
+    width: 100%;
+    padding: 1.2rem;
+
+    line-height: 1.8rem;
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+    border-radius: .6rem;
+    border: .2rem solid ${({ theme }) => theme.COLORS.surface_secondary};
+    color: ${({ theme }) => theme.COLORS.text_primary};
+    background-color: transparent;
+
+    &:placeholder-shown {
+      background-color: ${({ theme }) => theme.COLORS.surface_secondary};
+    }
+    &:focus {
+      border: .2rem solid ${({ theme }) => theme.COLORS.brand_hover};
+      outline: none;
+    }
+    /* Scrollbar */
+    &::-webkit-scrollbar {
+      width: .8rem;
+    }
+    &::-webkit-scrollbar-track {
+      margin-right: .5rem;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10rem;
+      background-color: ${({ theme }) => theme.COLORS.surface_secondary_hover};
+      outline: none;
+    }
+  }
 `;
 
 export const FeedbackButton = styled.button`
