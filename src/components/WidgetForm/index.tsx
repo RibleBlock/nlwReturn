@@ -4,10 +4,12 @@ import {
   FormBox, HeaderForm, FooterForm,
 } from './WidgetForm.styles';
 
+import { FeedbackTypeStep } from './Steps/FeedbackTypeStep';
+import { FeedbackContentStep } from './Steps/FeedbackContentStep';
+
 import bugImageUrl from '../../assets/images/bug.svg';
 import ideaImageUrl from '../../assets/images/idea.svg';
 import thoughtImageUrl from '../../assets/images/thought.svg';
-import { FeedbackTypeStep } from './Steps/FeedbackTypeStep';
 
 export const feedbackTypes = {
   /*
@@ -48,17 +50,20 @@ export type FeedbackType = keyof typeof feedbackTypes;
 export function WidgetForm() {
   const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null);
 
+  function handleRestartFeedback() {
+    setFeedbackType(null);
+  }
+
   return (
     <FormBox>
-      <HeaderForm>
-        <span>Deixe seu feedback</span>
-        <CloseButton />
-      </HeaderForm>
 
       { !feedbackType ? (
         <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />
       ) : (
-        <p>Selecionado.</p>
+        <FeedbackContentStep
+          feedbackType={feedbackType}
+          onFeedbackRestartRequested={handleRestartFeedback}
+        />
       ) }
 
       <FooterForm>

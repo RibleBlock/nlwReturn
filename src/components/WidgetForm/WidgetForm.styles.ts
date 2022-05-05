@@ -1,8 +1,39 @@
 import styled from 'styled-components';
 
+import { ArrowLeft } from 'phosphor-react';
+
 export const HeaderForm = styled.header`
   font-size: 2rem;
   line-height: 2.4rem;
+
+  > button:nth-child(1) {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+
+    > ArrowLeft {
+
+    }
+  }
+
+  > span {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    > img {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+`;
+
+export const ArrowBack = styled(ArrowLeft)`
+  width: 2rem;
+  height: 2rem;
+  color: ${({ theme }) => theme.COLORS.text_secundary};
+  &:hover {
+    color: ${({ theme }) => theme.COLORS.text_primary};
+  }
 `;
 
 export const MainForm = styled.div`
