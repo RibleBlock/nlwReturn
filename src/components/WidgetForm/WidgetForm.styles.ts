@@ -40,8 +40,8 @@ export const MainForm = styled.form`
 
   > textarea {
     resize: none;
-    min-width: 30.4rem;
-    min-height: 11.2rem;
+    min-width: 100%;
+    min-height: 13.2rem;
     width: 100%;
     padding: 1.2rem;
 
