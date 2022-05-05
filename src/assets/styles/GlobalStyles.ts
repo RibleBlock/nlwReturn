@@ -10,7 +10,7 @@ export default createGlobalStyle`
 
   body, input, button, :root {
     font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: transparent;
   }
 
