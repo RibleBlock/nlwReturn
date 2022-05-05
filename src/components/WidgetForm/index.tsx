@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { CloseButton } from '../CloseButton';
 import {
-  FormBox, HeaderForm, FeedbackButton, MainForm, FooterForm,
+  FormBox, HeaderForm, FooterForm,
 } from './WidgetForm.styles';
 
 import bugImageUrl from '../../assets/images/bug.svg';
 import ideaImageUrl from '../../assets/images/idea.svg';
 import thoughtImageUrl from '../../assets/images/thought.svg';
+import { FeedbackTypeStep } from './Steps/FeedbackTypeStep';
 
-const feedbackTypes = {
+export const feedbackTypes = {
   /*
    vamos criar uma objeto pra cada button dentro do <MainForm> e vamos exibir com
    Object.entries(feedbackTypes) que retorna um array, e com o .map() percorrer este array
@@ -37,14 +38,12 @@ const feedbackTypes = {
   },
 };
 /* Object.entries(feedbackTypes) => [ ['BUG', {...}], ['IDEA', {...}], ['OTHER', {...}] ] */
-
 /*
   A melhor forma de salvar informacoes a partir da
-  interacao do usuario com a nossa interface é utilizando estado
+  interacao do usuario é com a nossa interface é utilizando estado
  */
-
-// Keyof - Retorna a tipagem do objeto feedbackTypes
-type FeedbackType = keyof typeof feedbackTypes;
+/* Keyof - Retorna a tipagem do objeto feedbackTypes */
+export type FeedbackType = keyof typeof feedbackTypes;
 
 export function WidgetForm() {
   const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null);
@@ -57,18 +56,7 @@ export function WidgetForm() {
       </HeaderForm>
 
       { !feedbackType ? (
-        <MainForm>
-          { Object.entries(feedbackTypes).map(([key, value]) => (
-            <FeedbackButton
-              type="button"
-              key={key}
-              onClick={() => setFeedbackType(key as FeedbackType)}
-            >
-              <img src={value.image.source} alt={value.image.alt} />
-              <span>{value.title}</span>
-            </FeedbackButton>
-          )) }
-        </MainForm>
+        <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />
       ) : (
         <p>Selecionado.</p>
       ) }
