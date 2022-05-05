@@ -47,10 +47,10 @@ export const MainForm = styled.form`
 
     line-height: 1.8rem;
     font-size: 1.6rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Inter, Helvetica, sans-serif;
 
     border-radius: .6rem;
-    border: .2rem solid ${({ theme }) => theme.COLORS.surface_secondary};
+    border: .2rem solid ${({ theme }) => theme.COLORS.surface_secondary_hover};
     color: ${({ theme }) => theme.COLORS.text_primary};
     background-color: transparent;
 
