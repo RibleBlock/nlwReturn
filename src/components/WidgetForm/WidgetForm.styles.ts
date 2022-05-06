@@ -35,8 +35,62 @@ export const ArrowBack = styled(ArrowLeft)`
 export const MainForm = styled.form`
   display: flex;
   gap: 0.8rem;
+  flex-wrap: wrap;
   width: 100%;
   padding: .8rem 0;
+
+  > footer {
+    width: 100%;
+    display: flex;
+    gap: .8rem;
+    margin-top: .8rem;
+
+    > button {
+      padding: .8rem;
+      background-color: ${({ theme }) => theme.COLORS.text_on_tooltip};
+      border-radius: .4rem;
+      border-color: transparent;
+      transition: background-color 600ms;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background-color: ${({ theme }) => theme.COLORS.surface_secondary_hover};
+      }
+      &:focus {
+        outline: none;
+        background-color: ${({ theme }) => theme.COLORS.surface_secondary_hover};
+      }
+
+      > svg {
+        width: 2.4rem;
+        height: 2.4rem;
+        color: ${({ theme }) => theme.COLORS.text_primary};
+      }
+    }
+
+    > button[type=submit] {
+      color: ${({ theme }) => theme.COLORS.text_primary};
+      background-color: ${({ theme }) => theme.COLORS.brand};
+      padding: .8rem;
+      border-radius: .4rem;
+      flex-grow: 1;
+
+      font-size: 1.4rem;
+      line-height: 2rem;
+      transition: background-color 600ms;
+
+      &:hover {
+        background-color: ${({ theme }) => theme.COLORS.brand_hover};
+      }
+      &:focus {
+        outline: none;
+        background-color: ${({ theme }) => theme.COLORS.brand_hover};
+      }
+  }
+  }
 
   > textarea {
     resize: none;

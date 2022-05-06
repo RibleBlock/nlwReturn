@@ -1,3 +1,4 @@
+import { Camera } from 'phosphor-react';
 import { FeedbackType, feedbackTypes } from '..';
 import { CloseButton } from '../../CloseButton';
 import { ArrowBack, HeaderForm, MainForm } from '../WidgetForm.styles';
@@ -37,6 +38,19 @@ export function FeedbackContentStep({
         <textarea
           placeholder="Conte com detalhes o que está acontecendo..."
         />
+
+        <footer>
+          <button type="button">
+            <Camera />
+          </button>
+
+          <button
+            type="submit"
+
+          >
+            Enviar feedback
+          </button>
+        </footer>
       </MainForm>
     </>
   );
