@@ -1,6 +1,7 @@
-import { Camera } from 'phosphor-react';
+import { useState } from 'react';
 import { FeedbackType, feedbackTypes } from '..';
 import { CloseButton } from '../../CloseButton';
+import { ScreenshotButton } from '../ScreenshotButton';
 import { ArrowBack, HeaderForm, MainForm } from '../WidgetForm.styles';
 
 /*  */
@@ -12,6 +13,8 @@ interface FeedbackContentStepProps {
 export function FeedbackContentStep({
   feedbackType, onFeedbackRestartRequested,
 }: FeedbackContentStepProps) {
+  const [screenshot, setScreenshot] = useState<string | null>(null);
+
   const feedbackTypeInfo = feedbackTypes[feedbackType];
 
   return (
@@ -40,9 +43,10 @@ export function FeedbackContentStep({
         />
 
         <footer>
-          <button type="button">
-            <Camera />
-          </button>
+          <ScreenshotButton
+            screenshot={screenshot}
+            onScreenshotTook={setScreenshot}
+          />
 
           <button
             type="submit"
