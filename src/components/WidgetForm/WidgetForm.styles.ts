@@ -94,7 +94,7 @@ export const MainForm = styled.form`
 
   > textarea {
     resize: none;
-    min-width: 100%;
+    width: 100%;
     min-height: 13.2rem;
     width: 100%;
     padding: 1.2rem;
@@ -177,9 +177,9 @@ export const FormBox = styled.div`
 
   width: calc(100vw - 4rem);
 
-  @media (min-width: 760px) {
+  @media (min-width: 550px) {
     & {
-      width: auto;
+      width: 34rem;
     }
   }
 `;
