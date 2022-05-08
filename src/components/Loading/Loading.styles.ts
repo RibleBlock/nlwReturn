@@ -8,13 +8,9 @@ export const LoadingSvg = styled(CircleNotch)`
 
   @keyframes rodar {
     from {
-      -webkit-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
       transform: rotate(0deg);
     }
     to {
-      -webkit-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
       transform: rotate(360deg);
     }
   }

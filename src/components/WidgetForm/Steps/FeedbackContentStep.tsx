@@ -6,7 +6,7 @@ import { ArrowBack, HeaderForm, MainForm } from '../WidgetForm.styles';
 
 /*  */
 interface FeedbackContentStepProps {
-  feedbackType: FeedbackType;
+  feedbackType: FeedbackType; // "GUB" | "IDEA" | "OTHER"
   onFeedbackRestartRequested: () => void;
 }
 
@@ -48,10 +48,7 @@ export function FeedbackContentStep({
             onScreenshotTook={setScreenshot}
           />
 
-          <button
-            type="submit"
-
-          >
+          <button type="submit">
             Enviar feedback
           </button>
         </footer>
