@@ -8,10 +8,13 @@ import { ArrowBack, HeaderForm, MainForm } from '../WidgetForm.styles';
 interface FeedbackContentStepProps {
   feedbackType: FeedbackType; // "GUB" | "IDEA" | "OTHER"
   onFeedbackRestartRequested: () => void;
+  onFeedbackSent: () => void;
 }
 
 export function FeedbackContentStep({
-  feedbackType, onFeedbackRestartRequested,
+  feedbackType,
+  onFeedbackRestartRequested,
+  onFeedbackSent,
 }: FeedbackContentStepProps) {
   const [screenshot, setScreenshot] = useState<string | null>(null);
   const [comment, setComment] = useState('');
@@ -22,6 +25,8 @@ export function FeedbackContentStep({
   function handleSubmitFeedback(e: FormEvent) {
     e.preventDefault();
     console.log({ screenshot, comment });
+
+    onFeedbackSent();
   }
 
   return (

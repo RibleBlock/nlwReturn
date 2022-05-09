@@ -7,8 +7,9 @@ export const HeaderForm = styled.header`
   line-height: 2.4rem;
 
   > button:nth-child(1) {
+    display: flex;
     position: absolute;
-    top: 2rem;
+    top: 1.9rem;
     left: 2rem;
   }
 
@@ -47,10 +48,10 @@ export const MainForm = styled.form`
 
     > button {
       padding: .8rem;
-      background-color: ${({ theme }) => theme.COLORS.text_on_tooltip};
+      background-color: ${({ theme }) => theme.COLORS.surface_primary};
       border-radius: .4rem;
       border-color: transparent;
-      transition: background-color 600ms;
+      transition: background-color 700ms;
 
       display: flex;
       justify-content: center;
@@ -65,7 +66,7 @@ export const MainForm = styled.form`
       }
 
       &:disabled {
-        opacity: 0.2;
+        opacity: 0.4;
       }
 
       > svg {
@@ -113,7 +114,7 @@ export const MainForm = styled.form`
     background-color: transparent;
 
     &:placeholder-shown {
-      background-color: ${({ theme }) => theme.COLORS.surface_secondary};
+      background-color: ${({ theme }) => theme.COLORS.surface_primary};
     }
     &:focus {
       border: .2rem solid ${({ theme }) => theme.COLORS.brand_hover};
@@ -167,7 +168,7 @@ export const FooterForm = styled.footer`
 `;
 
 export const FormBox = styled.div`
-  background-color: ${({ theme }) => theme.COLORS.surface_secondary};
+  background-color: ${({ theme }) => theme.COLORS.surface_primary};
   padding: 1.6rem;
   border-radius: 1.6rem;
   margin-bottom: 1.6rem;

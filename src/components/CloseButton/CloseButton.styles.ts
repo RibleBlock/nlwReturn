@@ -8,8 +8,9 @@ export const LittleX = styled(X)`
 `;
 
 export const PopButton = styled(Popover.Button)`
+  display: flex;
   position: absolute;
-  top: 2rem;
+  top: 1.9rem;
   right: 2rem;
 
   color: ${({ theme }) => theme.COLORS.text_secundary};

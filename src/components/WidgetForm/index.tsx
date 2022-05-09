@@ -9,6 +9,7 @@ import { FeedbackContentStep } from './Steps/FeedbackContentStep';
 import bugImageUrl from '../../assets/images/bug.svg';
 import ideaImageUrl from '../../assets/images/idea.svg';
 import thoughtImageUrl from '../../assets/images/thought.svg';
+import { FeedbackSuccessStep } from './Steps/FeedbackSuccessStep';
 
 export const feedbackTypes = {
   /*
@@ -48,21 +49,31 @@ export type FeedbackType = keyof typeof feedbackTypes;
 
 export function WidgetForm() {
   const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null);
+  const [feedbackSent, setFeedbackSent] = useState(false);
 
   function handleRestartFeedback() {
+    setFeedbackSent(false);
     setFeedbackType(null);
   }
 
   return (
     <FormBox>
 
-      { !feedbackType ? (
-        <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />
+      { feedbackSent ? (
+        <FeedbackSuccessStep onFeedbackRestartRequested={handleRestartFeedback} />
       ) : (
-        <FeedbackContentStep
-          feedbackType={feedbackType}
-          onFeedbackRestartRequested={handleRestartFeedback}
-        />
+        <>
+          <span></span>
+          { !feedbackType ? (
+            <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />
+          ) : (
+            <FeedbackContentStep
+              feedbackType={feedbackType}
+              onFeedbackRestartRequested={handleRestartFeedback}
+              onFeedbackSent={() => setFeedbackSent(true)}
+            />
+          ) }
+        </>
       ) }
 
       <FooterForm>
