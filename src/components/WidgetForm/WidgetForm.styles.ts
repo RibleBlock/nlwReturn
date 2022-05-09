@@ -64,6 +64,10 @@ export const MainForm = styled.form`
         background-color: ${({ theme }) => theme.COLORS.surface_secondary_hover};
       }
 
+      &:disabled {
+        opacity: 0.2;
+      }
+
       > svg {
         width: 2.4rem;
         height: 2.4rem;

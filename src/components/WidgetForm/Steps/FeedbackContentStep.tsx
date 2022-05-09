@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { FeedbackType, feedbackTypes } from '..';
 import { CloseButton } from '../../CloseButton';
 import { ScreenshotButton } from '../ScreenshotButton';
@@ -14,8 +14,15 @@ export function FeedbackContentStep({
   feedbackType, onFeedbackRestartRequested,
 }: FeedbackContentStepProps) {
   const [screenshot, setScreenshot] = useState<string | null>(null);
+  const [comment, setComment] = useState('');
 
   const feedbackTypeInfo = feedbackTypes[feedbackType];
+
+  /* esse 'FormEvent' vem de dentro do react e ele tambem tem importacao */
+  function handleSubmitFeedback(e: FormEvent) {
+    e.preventDefault();
+    console.log({ screenshot, comment });
+  }
 
   return (
     <>
@@ -37,9 +44,10 @@ export function FeedbackContentStep({
         <CloseButton />
       </HeaderForm>
 
-      <MainForm>
+      <MainForm onSubmit={(e) => handleSubmitFeedback(e)}>
         <textarea
           placeholder="Conte com detalhes o que está acontecendo..."
+          onChange={(e) => setComment(e.target.value)}
         />
 
         <footer>
@@ -48,7 +56,10 @@ export function FeedbackContentStep({
             onScreenshotTook={setScreenshot}
           />
 
-          <button type="submit">
+          <button
+            type="submit"
+            disabled={comment.length === 0}
+          >
             Enviar feedback
           </button>
         </footer>
