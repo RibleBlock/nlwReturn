@@ -26,7 +26,6 @@ export const Div = styled.div`
     transition: all 700ms;
     &:hover, &:focus {
       background-color: ${({ theme }) => theme.COLORS.surface_secondary_hover};
-
     }
   }
 `;
