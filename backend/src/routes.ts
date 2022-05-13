@@ -1,8 +1,9 @@
 import express from "express";
 import nodemailer from 'nodemailer';
 import { prisma } from "./prisma";
-export const route = express.Router();
+const route = express.Router();
 
+  // nodemailer & mailtrap.io configuracao
 const transport = nodemailer.createTransport({
   host: "smtp.mailtrap.io",
   port: 2525,
@@ -15,7 +16,7 @@ const transport = nodemailer.createTransport({
 route.post('/feedbacks', async (req, res) => {
   const { type, comment, screenshot } = req.body;
 
-  //                      bd    table    operation
+  // enviando dados para bd     table    operation
   const feedback = await prisma.feedback.create({
     // select: dados que seram retornados pos-criacão
     data: { // data - são quais os dados para a criacão dessa tabela
@@ -40,3 +41,4 @@ route.post('/feedbacks', async (req, res) => {
 
   return res.status(201).json({data: feedback});
 });
+export default route;
