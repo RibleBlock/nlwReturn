@@ -1,18 +1,18 @@
-import express from "express";
+import express from 'express';
 import nodemailer from 'nodemailer';
-import { prisma } from "./prisma";
-import { PrismaFeedbackRepository } from "./repositories/prisma/prisma.feedbacks.repository";
-import { SubmitFeedbackServices } from "./services/submitFeedback.services";
+import { PrismaFeedbackRepository } from './repositories/prisma/prisma.feedbacks.repository';
+import { SubmitFeedbackServices } from './services/submitFeedback.services';
+
 const route = express.Router();
 
 // nodemailer & mailtrap.io configuracao
 const transport = nodemailer.createTransport({
-  host: "smtp.mailtrap.io",
+  host: 'smtp.mailtrap.io',
   port: 2525,
   auth: {
-    user: "388e49c1284885",
-    pass: "ba27cac1f5202b"
-  }
+    user: '388e49c1284885',
+    pass: 'ba27cac1f5202b',
+  },
 });
 
 route.post('/feedbacks', async (req, res) => {
@@ -20,7 +20,7 @@ route.post('/feedbacks', async (req, res) => {
 
   const prismaFeedbacksRepository = new PrismaFeedbackRepository();
   const submitFeedbackServices = new SubmitFeedbackServices(
-    prismaFeedbacksRepository
+    prismaFeedbacksRepository,
   );
 
   const feedback = await submitFeedbackServices.execute({
@@ -42,6 +42,6 @@ route.post('/feedbacks', async (req, res) => {
   //   ].join('\n')
   // })
 
-  return res.status(201).json({data: feedback});
+  return res.status(201).json({ data: feedback });
 });
 export default route;

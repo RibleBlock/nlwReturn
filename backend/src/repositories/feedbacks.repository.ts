@@ -6,6 +6,7 @@ export interface FeedbackCreateData {
   screenshot?: string;
 }
 export interface FeedbacksRepository {
+  // Aqui dentro vai quais operacoes podem ser realizadas dentro do DB
   // Acoes/Metodos que existem dentro do repositorio de feedback do DB
-  create: (data: FeedbackCreateData) => Promise<void>;
+  create: (data: FeedbackCreateData) => Promise<void>;// <-- funcao async
 }
