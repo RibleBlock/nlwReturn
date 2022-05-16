@@ -1,16 +1,22 @@
 // Camada de aplicacao que lida com a regra de negocio
 
-import { FeedbacksRepository } from "../repositories/feedbacks.repository";
+// services/use-cases é cada acao que um usuario pode fazer
 
+import { FeedbacksRepository } from '../repositories/feedbacks.repository';
+
+// para enviar precisa de dados
 interface SubmitFeedbackServicesRequest {
-  //para enviar precisa de dados
   type: string;
   comment: string;
   screenshot?: string;
 }
+
+// Apenas um metodo. Apenas uma resposabilidade
 export class SubmitFeedbackServices {
+  // eslint-disable-next-line no-useless-constructor
   constructor(
     private feedbacksRepository: FeedbacksRepository,
+  // eslint-disable-next-line no-empty-function
   ) {}
 
   async execute(request: SubmitFeedbackServicesRequest) {
@@ -20,7 +26,7 @@ export class SubmitFeedbackServices {
       type,
       comment,
       screenshot,
-    })
+    });
 
     return feedback;
   }
