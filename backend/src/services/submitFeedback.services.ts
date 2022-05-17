@@ -2,6 +2,7 @@
 
 // services/use-cases é cada acao/Funcionalidades que um usuario pode fazer
 
+import { MailAdapter } from '../adapters/mail.adapter';
 import { FeedbacksRepository } from '../repositories/feedbacks.repository';
 
 // para enviar precisa de dados
@@ -15,6 +16,7 @@ interface SubmitFeedbackServicesRequest {
 export class SubmitFeedbackServices {
   constructor(
     private feedbacksRepository: FeedbacksRepository,
+    private mailAdapter: MailAdapter,
   ) {}
 
   async execute(request: SubmitFeedbackServicesRequest) {
@@ -26,6 +28,14 @@ export class SubmitFeedbackServices {
       screenshot,
     });
 
-    return feedback;
+    await this.mailAdapter.sendMail({
+      subject: 'Novo feedback',
+      body: [
+        '<div style="font-family: sans-serif; font-size: 16px; color: #111;">',
+        `<p>Tipo do feedback: ${type}</p>`,
+        `<p>Comentário: ${comment}</p>`,
+        '</div>',
+      ].join('\n'),
+    });
   }
 }
