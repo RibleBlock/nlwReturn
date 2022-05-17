@@ -1,6 +1,6 @@
 // Camada de aplicacao que lida com a regra de negocio
 
-// services/use-cases é cada acao que um usuario pode fazer
+// services/use-cases é cada acao/Funcionalidades que um usuario pode fazer
 
 import { FeedbacksRepository } from '../repositories/feedbacks.repository';
 
@@ -15,7 +15,6 @@ interface SubmitFeedbackServicesRequest {
 export class SubmitFeedbackServices {
   constructor(
     private feedbacksRepository: FeedbacksRepository,
-  // eslint-disable-next-line no-empty-function
   ) {}
 
   async execute(request: SubmitFeedbackServicesRequest) {
