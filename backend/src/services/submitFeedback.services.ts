@@ -13,7 +13,6 @@ interface SubmitFeedbackServicesRequest {
 
 // Apenas um metodo. Apenas uma resposabilidade
 export class SubmitFeedbackServices {
-  // eslint-disable-next-line no-useless-constructor
   constructor(
     private feedbacksRepository: FeedbacksRepository,
   // eslint-disable-next-line no-empty-function

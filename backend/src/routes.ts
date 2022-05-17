@@ -22,7 +22,6 @@ route.post('/feedbacks', async (req, res) => {
   const submitFeedbackServices = new SubmitFeedbackServices(
     prismaFeedbacksRepository,
   );
-
   const feedback = await submitFeedbackServices.execute({
     type,
     comment,
