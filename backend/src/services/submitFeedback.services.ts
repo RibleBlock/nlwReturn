@@ -15,14 +15,14 @@ interface SubmitFeedbackServicesRequest {
 // Apenas um metodo. Apenas uma resposabilidade
 export class SubmitFeedbackServices {
   constructor(
-    private feedbacksRepository: FeedbacksRepository,
-    private mailAdapter: MailAdapter,
+    private feedbacksRepository: FeedbacksRepository, // abstracao
+    private mailAdapter: MailAdapter, // abstracao
   ) {}
 
   async execute(request: SubmitFeedbackServicesRequest) {
     const { type, comment, screenshot } = request;
 
-    const feedback = await this.feedbacksRepository.create({
+    await this.feedbacksRepository.create({
       type,
       comment,
       screenshot,

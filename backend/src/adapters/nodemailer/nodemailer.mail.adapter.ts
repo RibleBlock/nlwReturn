@@ -13,8 +13,7 @@ const transport = nodemailer.createTransport({
 
 export class NodemailerMailAdapter implements MailAdapter {
   async sendMail({ subject, body }: SendMailData) {
-    // nodemailer & mailtrap.io envio
-    await transport.sendMail({
+    await transport.sendMail({ // nodemailer & mailtrap.io envio
       from: 'Equipe Feedget <oi@feedget.com>',
       to: 'RIquelme Aparecido <riquelmeaparecido08@gmail.com>',
       subject,
