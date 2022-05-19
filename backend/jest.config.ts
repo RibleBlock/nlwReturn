@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /*
 * For a detailed explanation regarding each configuration property and type check, visit:
 * https://jestjs.io/docs/configuration
@@ -160,7 +161,7 @@ export default {
 
   // The glob patterns Jest uses to detect test files
   // testMatch: [
-  //   "**/__tests__/**/*.[jt]s?(x)",
+  // '**/__tests__/**/*.[jt]s?(x)',
   //   "**/?(*.)+(spec|test).[tj]s?(x)"
   // ],
 

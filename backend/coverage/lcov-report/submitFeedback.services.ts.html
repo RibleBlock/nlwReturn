@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.22% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>28/45</span>
+                <span class='fraction'>53/53</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.22% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>28/45</span>
+                <span class='fraction'>53/53</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -108,7 +108,15 @@
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -130,28 +138,36 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Camada de aplicacao que lida com a regra de negocio
 &nbsp;
@@ -177,26 +193,34 @@ export class SubmitFeedbackServices {
   async execute(request: SubmitFeedbackServicesRequest) {
     const { type, comment, screenshot } = request;
 &nbsp;
+    if (!comment) {
+      throw new Error('Comment is required');
+    }
+&nbsp;
+    if (!type) {
+      throw new Error('Type is required');
+    }
+&nbsp;
     if (screenshot &amp;&amp; !screenshot.startsWith('data:image/png;base64')) {
       throw new Error('Invalid screenshot format.');
     }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
-<span class="cstat-no" title="statement not covered" >    await this.feedbacksRepository.create({</span>
-<span class="cstat-no" title="statement not covered" >      type,</span>
-<span class="cstat-no" title="statement not covered" >      comment,</span>
-<span class="cstat-no" title="statement not covered" >      screenshot,</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    await this.mailAdapter.sendMail({</span>
-<span class="cstat-no" title="statement not covered" >      subject: 'Novo feedback',</span>
-<span class="cstat-no" title="statement not covered" >      body: [</span>
-<span class="cstat-no" title="statement not covered" >        '&lt;div style="font-family: sans-serif; font-size: 16px; color: #111;"&gt;',</span>
-<span class="cstat-no" title="statement not covered" >        `&lt;p&gt;Tipo do feedback: ${type}&lt;/p&gt;`,</span>
-<span class="cstat-no" title="statement not covered" >        `&lt;p&gt;Comentário: ${comment}&lt;/p&gt;`,</span>
-<span class="cstat-no" title="statement not covered" >        '&lt;/div&gt;',</span>
-<span class="cstat-no" title="statement not covered" >      ].join('\n'),</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+&nbsp;
+    await this.feedbacksRepository.create({
+      type,
+      comment,
+      screenshot,
+    });
+&nbsp;
+    await this.mailAdapter.sendMail({
+      subject: 'Novo feedback',
+      body: [
+        '&lt;div style="font-family: sans-serif; font-size: 16px; color: #111;"&gt;',
+        `&lt;p&gt;Tipo do feedback: ${type}&lt;/p&gt;`,
+        `&lt;p&gt;Comentário: ${comment}&lt;/p&gt;`,
+        '&lt;/div&gt;',
+      ].join('\n'),
+    });
+  }
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -205,7 +229,7 @@ export class SubmitFeedbackServices {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed May 18 2022 21:39:54 GMT-0300 (Brasilia Standard Time)
+                at Thu May 19 2022 15:57:11 GMT-0300 (Brasilia Standard Time)
             </div>
         <script src="prettify.js"></script>
         <script>

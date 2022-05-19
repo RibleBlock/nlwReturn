@@ -22,6 +22,14 @@ export class SubmitFeedbackServices {
   async execute(request: SubmitFeedbackServicesRequest) {
     const { type, comment, screenshot } = request;
 
+    if (!comment) {
+      throw new Error('Comment is required');
+    }
+
+    if (!type) {
+      throw new Error('Type is required');
+    }
+
     if (screenshot && !screenshot.startsWith('data:image/png;base64')) {
       throw new Error('Invalid screenshot format.');
     }
